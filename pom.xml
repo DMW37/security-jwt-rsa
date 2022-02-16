@@ -10,6 +10,7 @@
     <modules>
         <module>common</module>
         <module>auth_server</module>
+        <module>server_product</module>
     </modules>
     <packaging>pom</packaging>
 

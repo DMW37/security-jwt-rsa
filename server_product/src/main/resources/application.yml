@@ -1,5 +1,5 @@
 server:
-  port: 9001
+  port: 9002
 
 spring:
   datasource:
@@ -19,4 +19,3 @@ logging:
 rsa:
   key:
     pubKeyFile: D:\programDevelopment\developmentOfLanguage\Java\study\IdeaDeveloment\JavaEE\framework\springSecurity\springboot_security_jwt_rsa_parent\common\rsa_key.pul
-    priKeyFile: D:\programDevelopment\developmentOfLanguage\Java\study\IdeaDeveloment\JavaEE\framework\springSecurity\springboot_security_jwt_rsa_parent\common\rsa_key
