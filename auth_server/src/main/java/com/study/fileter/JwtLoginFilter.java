@@ -62,7 +62,7 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
                 writer = response.getWriter();
                 Map<String, Object> responseMap = new HashMap<>();
                 responseMap.put("code", HttpServletResponse.SC_UNAUTHORIZED);
-                responseMap.put("message", "账号或者密码有误");
+                responseMap.put("msg", "账号或者密码有误");
                 String responseResult = new ObjectMapper().writeValueAsString(responseMap);
                 writer.write(responseResult);
                 writer.flush();
@@ -82,7 +82,7 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
      * 用户登录成功后，生成token,并且返回json数据给前端
      */
     @Override
-    protected void successfulAuthentication(HttpServletRequest request,
+    public void successfulAuthentication(HttpServletRequest request,
                                             HttpServletResponse response, FilterChain chain, Authentication authResult)
             throws IOException, ServletException {
 //得到当前认证的用户对象
@@ -101,7 +101,7 @@ public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
             writer = response.getWriter();
             Map<String, Object> responseMap = new HashMap<>();
             responseMap.put("code", HttpServletResponse.SC_OK);
-            responseMap.put("message", "登入成功");
+            responseMap.put("msg", "登入成功");
             String responseResult = new ObjectMapper().writeValueAsString(responseMap);
             writer.write(responseResult);
             writer.flush();
